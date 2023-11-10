@@ -17,13 +17,13 @@ namespace VisTest
             using (var cloud = new PointCloudOfXYZRGBA())
             {
                 using (var reader = new PCDReader())
-                    reader.Read(DataPath("tutorials/table_scene_mug_stereo_textured.pcd"), cloud);
+                    reader.Read("C:\\Users\\OMEN\\Documents\\GitHub\\PclSharp\\data\\tutorials\\table_scene_mug_stereo_textured.pcd", cloud);
 
                 using (var visualizer = new Visualizer("a window"))
                 {
                     visualizer.AddPointCloud(cloud);
-                    visualizer.SetPointCloudRenderingProperties(RenderingProperties.PointSize, 2);
-                    visualizer.SetPointCloudRenderingProperties(RenderingProperties.Opacity, 0.95);
+                    visualizer.SetPointCloudRenderingProperties(RenderingProperties.PointSize, 22);
+                    visualizer.SetPointCloudRenderingProperties(RenderingProperties.Opacity, 0.5);
 
                     while (!visualizer.WasStopped)
                         visualizer.SpinOnce(100);

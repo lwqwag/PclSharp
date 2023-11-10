@@ -4,11 +4,10 @@
 
 #include <pcl/pcl_base.h>
 #include <pcl/point_types.h>
-
 using namespace pcl;
 using namespace std;
 
-typedef boost::shared_ptr<PointCloud<PointXYZ>> boost_cloud;
+typedef std::shared_ptr<PointCloud<PointXYZ>> boost_cloud;
 
 #ifdef __cplusplus
 extern "C" {
@@ -21,7 +20,7 @@ EXPORT(void) pclbase_xyz_setInputCloud(PCLBase<PointXYZ>* ptr, PointCloud<PointX
 
 EXPORT(void) pclbase_xyz_setIndices(PCLBase<PointXYZ>* ptr, vector<int>* indices)
 {
-	ptr->setIndices(boost::shared_ptr<vector<int>>(boost::shared_ptr<vector<int>>(), indices));
+	ptr->setIndices(std::shared_ptr<vector<int>>(std::shared_ptr<vector<int>>(), indices));
 }
 
 EXPORT(const PointXYZ*) pclbase_xyz_indexGet(PCLBase<PointXYZ>* ptr, int idx)

@@ -5,14 +5,13 @@
 #include "pcl\pcl_base.h"
 #include "pcl\point_types.h"
 #include <pcl/features/fpfh.h>
-
 using namespace pcl;
 using namespace std;
 
 typedef FPFHEstimation<PointXYZ, Normal, FPFHSignature33> cpp_wrapper;
-typedef boost::shared_ptr<PointCloud<PointXYZ>> boost_cloud;
-typedef boost::shared_ptr<PointCloud<Normal>> boost_norms;
-typedef boost::shared_ptr<vector<int>> boost_indices;
+typedef std::shared_ptr<PointCloud<PointXYZ>> boost_cloud;
+typedef std::shared_ptr<PointCloud<Normal>> boost_norms;
+typedef std::shared_ptr<vector<int>> boost_indices;
 
 #ifdef __cplusplus
 extern "C" {
